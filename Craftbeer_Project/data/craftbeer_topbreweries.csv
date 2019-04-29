@@ -1,0 +1,61 @@
+id,year,rank,brewery_name,city,state,latitude,longitude
+1,breweries_2011,1,Boston Beer Co.,Boston,MA,42.3146,-71.103
+2,breweries_2011,2,Sierra Nevada Brewing Co.,Chico,CA,39.7285,-121.8375
+3,breweries_2011,3,New Belgium Brewing Co.,Fort Collins,CO,40.5853,-105.0844
+4,breweries_2011,4,The Gambrinus Company,San Antonio,TX,29.4241,-98.4936
+5,breweries_2011,5,Deschutes Brewery,Bend,OR,44.0582,-121.3153
+6,breweries_2011,6,Matt Brewing Co. ,Utica,NY,43.1009,-75.2327
+7,breweries_2011,7,"Bell's Brewery, Inc.",Galesburg,MI,42.2905,-85.4175
+8,breweries_2011,8,Harpoon Brewery,Boston,MA,42.3601,-71.0589
+9,breweries_2011,9,Laquintas Brewing Co.,Petaluma,CA,38.2324,-122.6367
+10,breweries_2011,10,Boulevard Brewing Co. ,Kansas City,MO,39.0997,-94.5786
+11,breweries_2012,1,Boston Beer Co.,Boston,MA,42.3146,-71.103
+12,breweries_2012,2,Sierra Nevada Brewing Co.,Chico,CA,39.7285,-121.8375
+13,breweries_2012,3,New Belgium Brewing Co.,Fort Collins,CO,40.5853,-105.0844
+14,breweries_2012,4,The Gambrinus Company,San Antonio,TX,29.4241,-98.4936
+15,breweries_2012,5,Deschutes Brewery,Bend,OR,44.0582,-121.3153
+16,breweries_2012,6,Laquintas Brewing Co.,Petaluma,CA,38.2324,-122.6367
+17,breweries_2012,7,"Bell's Brewery, Inc.",Galesburg,MI,42.2905,-85.4175
+18,breweries_2012,8,Matt Brewing Co. ,Utica,NY,43.1009,-75.2327
+19,breweries_2012,9,Harpoon Brewery,Boston,MA,42.3601,-71.0589
+20,breweries_2012,10,Stone Brewing Co.,Escondido,CA,33.1192,-117.0864
+21,breweries_2013,1,Boston Beer Co.,Boston,MA,42.3146,-71.103
+22,breweries_2013,2,Sierra Nevada Brewing Co.,Chico,CA,39.7285,-121.8375
+23,breweries_2013,3,New Belgium Brewing Co.,Fort Collins,CO,40.5853,-105.0844
+24,breweries_2013,4,The Gambrinus Company,San Antonio,TX,29.4241,-98.4936
+25,breweries_2013,5,Laquintas Brewing Co.,Petaluma,CA,38.2324,-122.6367
+26,breweries_2013,6,Deschutes Brewery,Bend,OR,44.0582,-121.3153
+27,breweries_2013,7,"Bell's Brewery, Inc.",Galesburg,MI,42.2905,-85.4175
+28,breweries_2013,8,Duvel Moortgat USA,Kansas City,MO,39.0997,-94.5786
+29,breweries_2013,9,Brooklyn Brewery,Brooklyn,NY,40.6782,-73.9442
+30,breweries_2013,10,Stone Brewing Co.,Escondido,CA,33.1192,-117.0864
+31,breweries_2014,1,"D.G. Yuengling and Son, Inc.",Pottsville,PA,40.6856,-76.1955
+32,breweries_2014,2,Boston Beer Co.,Boston,MA,42.3146,-71.103
+33,breweries_2014,3,Sierra Nevada Brewing Co.,Chico,CA,39.7285,-121.8375
+34,breweries_2014,4,New Belgium Brewing Co.,Fort Collins,CO,40.5853,-105.0844
+35,breweries_2014,5,The Gambrinus Company,San Antonio,TX,29.4241,-98.4936
+36,breweries_2014,6,Laquintas Brewing Co.,Petaluma,CA,38.2324,-122.6367
+37,breweries_2014,7,Deschutes Brewery,Bend,OR,44.0582,-121.3153
+38,breweries_2014,8,"Bell's Brewery, Inc.",Galesburg,MI,42.2905,-85.4175
+39,breweries_2014,9,Stone Brewing Co.,Escondido,CA,33.1192,-117.0864
+40,breweries_2014,10,Minhas Craft Brewery,Monroe,WI,42.6011,-89.6385
+41,breweries_2015,1,"D.G. Yuengling and Son, Inc.",Pottsville,PA,40.6856,-76.1955
+42,breweries_2015,2,Boston Beer Co.,Boston,MA,42.3146,-71.103
+43,breweries_2015,3,Sierra Nevada Brewing Co.,Chico,CA,39.7285,-121.8375
+44,breweries_2015,4,New Belgium Brewing Co.,Fort Collins,CO,40.5853,-105.0844
+45,breweries_2015,5,The Gambrinus Company,San Antonio,TX,29.4241,-98.4936
+46,breweries_2015,6,Laquintas Brewing Co.,Petaluma,CA,38.2324,-122.6367
+47,breweries_2015,7,"Bell's Brewery, Inc.",Galesburg,MI,42.2905,-85.4175
+48,breweries_2015,8,Deschutes Brewery,Bend,OR,44.0582,-121.3153
+49,breweries_2015,9,Minhas Craft Brewery,Monroe,WI,42.6011,-89.6385
+50,breweries_2015,10,Stone Brewing Co.,Escondido,CA,33.1192,-117.0864
+51,breweries_2016,1,"D.G. Yuengling and Son, Inc.",Pottsville,PA,40.6856,-76.1955
+52,breweries_2016,2,Boston Beer Co.,Boston,MA,42.3146,-71.103
+53,breweries_2016,3,Sierra Nevada Brewing Co.,Chico,CA,39.7285,-121.8375
+54,breweries_2016,4,New Belgium Brewing Co.,Fort Collins,CO,40.5853,-105.0844
+55,breweries_2016,5,The Gambrinus Company,San Antonio,TX,29.4241,-98.4936
+56,breweries_2016,6,Laquintas Brewing Co.,Petaluma,CA,38.2324,-122.6367
+57,breweries_2016,7,"Bell's Brewery, Inc.",Galesburg,MI,42.2905,-85.4175
+58,breweries_2016,8,Deschutes Brewery,Bend,OR,44.0582,-121.3153
+59,breweries_2016,9,Minhas Craft Brewery,Monroe,WI,42.6011,-89.6385
+60,breweries_2016,10,Stone Brewing Co.,Escondido,CA,33.1192,-117.0864

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+        <title>Rocky Mountain National Park</title>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+		<!--put your external stylesheet links here-->
+        <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="lib/leaflet.css">
+        <link rel="stylesheet" href="lib/leaflet-sidebar.css">
+        <link rel="stylesheet" href="lib/leaflet-sidebar.min.css">
+        <script src="https://libs.cartocdn.com/carto.js/v4.1.5/carto.min.js"></script>
+        <link href="https://carto.com/developers/carto-js/examples/maps/public/style.css" rel="stylesheet">
+
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+
+		<!--[if IE<9]>
+			<link rel="stylesheet" href="css/style.ie.css">
+		<![endif]-->
+
+	</head>
+
+	<body>
+
+      <div id="sidebar" class="sidebar collapsed">
+        <!-- Nav tabs -->
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#home" role="tab"><i class="fa fa-map"></i></a></li>
+								<li><a href="#radius" role="tab"><i class="fas fa-layer-group"></i></a></li>
+                <li><a href="#profile" role="tab"><i class="fa fa-user"></i></a></li>
+            </ul>
+
+        </div>
+
+        <!-- Tab panes -->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="home">
+                <h1 class="sidebar-header">
+                    Rocky Mountain National Park
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+
+																	<p class="lorem"><center>Welcome to the Rocky Mountain National Park.<br>Feel free to explore the map and all the park has to offer. Enjoy your visit.</center></p>
+
+                <p>Map Layer List</p>
+
+                <div id="controls">
+
+                    <ul display: "inline-block">
+                        <li display:"inline-block">
+                            <input type="checkbox" class="checkboxes" id="polygon" onClick="toggleLayer(romoPolygonLayer,'polygon')" checked/>
+                            <label>Park Boundary</label>
+                        </li>
+                        <li display:"inline-block">
+                            <input type="checkbox" class="checkboxes" id="summits" onClick="toggleLayer(romoSummitsLayer,'summits')" checked/>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/White_Arrow_Up.svg/1024px-White_Arrow_Up.svg.png" width=12 height=12 style="margin: 0px 5px"><label>Summits</label>
+                        </li>
+												<li display:"inline-block">
+													<input type="checkbox" class="checkboxes" id="falls" onClick="toggleLayer(romoWaterfallLayer, 'falls')" checked/>
+													<img src="http://panda.mobilepaks.com/wp-content/uploads/2013/12/Light-Blue-Triangle-150x138.png" width=15 height=15 style="margin:0px 5px"> <label>Waterfalls</label>
+												</li>
+                        <li>
+                            <input type="checkbox" class="checkboxes" id="trails" onClick="toggleLayer(romoTrailsLayer,'trails')" checked/>
+                            <img src="data/line.PNG" width=15 height=15 style="margin:0px 5px"><label>Trails</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="checkboxes" id="centers" onClick="toggleLayer(romoCentersLayer,'centers')" checked/>
+                            <img src="https://img.clipartxtras.com/a081f306355222c96014d74fe920dbdb_orange-house-clipart-clipartsgramcom-orange-house-clipart_600-600.png" padx=5px width=15 height=15 style="margin:0px 5px"> <label>Visitor Centers</label>
+                        </li>
+												<li>
+														<input type="checkbox" class="checkboxes" id="picnic" onClick="toggleLayer(romoPicnicLayer,'picnic')" checked/>
+														<img src="https://s21124.pcdn.co/wp-content/uploads/2017/05/parks-Icon.png" padx=5px width=16 height=16 style="margin:0px 5px"> <label>Picnic Areas</label>
+													</li>
+													<li>
+														<input type="checkbox" class="checkboxes" id="poi" onClick="toggleLayer(romoPoiLayer, 'poi')" checked/>
+														<img src="https://joesbutchershop.com/wp-content/uploads/2016/07/cameraicon.png" padx=5px width=16 height=16 style="margin:0px 5px"> <label>Visitor Recommended POI</label>
+													</li>
+
+                    </ul>
+
+                    <p>Base Map Options</p>
+                    <ul>
+                        <li>
+                            <input type="radio" class="radio" name="rBase" id="outdoors" onclick="toggleBase()" checked/>           <label>Terrain</label>
+                        </li>
+                        <li>
+                            <input type="radio" class="radio" name="rBase" id="cartoon" onclick="toggleBase()"> <label>Cartoon</label>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+						<div class="sidebar-pane" id="radius">
+                <h1 class="sidebar-header">Find Features Close to Me<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+        					<p class="text">Use this tool to find the features closest to you. Choose an option to select your location and then choose a mile radius to search.
+										<br><br><br>
+										<label for="radius_input" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">Search distance from my location (in miles):</label>
+                    <input type="number" id="radius_input" name="radius_input" placeholder="Radius search..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">
+										<label for="lat" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">GPS Lat:</label>
+										<input type="text" id="rlat" name="rlat" placeholder="Latitude..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">
+
+										<label for="long" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">GPS Long:</label>
+										<input type="text" id="rlng" name="rlng" placeholder="Longitude..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">
+
+										<button id="locate" onClick="getUserRadiusLocation()"> Use my location </button>
+										<button id="locate" onClick="radiusLocation()"> Select Location on Map </button><p></p>
+                    <input type="submit" value="Search" onClick="radiusSearch()" style="background-color: #4CAF50; color: white; padding: 12px 20px; border: none; border-radius: 4px;">
+
+							</div>
+
+            <div class="sidebar-pane" id="profile">
+                <h1 class="sidebar-header">Share Your POI<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+
+										<p class="text">Use this form to share your favorite locations with other visitors.</p>
+
+                                <div class="form" style="border-radius: 5px; padding: 10px; display: block">
+
+                    <label for="pname" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">Your Name:</label>
+                    <input type="text" id="pname" name="pname" placeholder="Your name..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">
+
+                    <label for="title" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">Point of Interest:</label>
+                    <input type="text" id="title" name="title" placeholder="POI Title" style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">
+
+                    <label for="description" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">Description:</label>
+                    <textarea id="description" name="description" placeholder="Describe your point of interest..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical; height:145px"></textarea>
+
+                    <label for="lat" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">GPS Lat:</label>
+                    <input type="text" id="lat" name="lat" placeholder="Latitude..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">
+
+                    <label for="long" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">GPS Long:</label>
+                    <input type="text" id="lng" name="lng" placeholder="Longitude..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">
+
+										<button id="locate" onClick="getUserLocation()"> Use my location </button>
+										<button id="locate" onClick="getPOILatLng()"> Select Location on Map </button><p></p>
+                    <input type="submit" value="Submit" onClick="setData()" style="background-color: #4CAF50; color: white; padding: 12px 20px; border: none; border-radius: 4px;">
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+        <div id="map" class="sidebar-map"></div>
+
+
+
+
+
+        <script src="https://use.fontawesome.com/4087913cd5.js"></script>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+        <script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+        <script type="text/javascript" src="lib/leaflet.js"></script>
+        <script type="text/javascript" src="lib/leaflet-sidebar.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+
+	</body>
+</html>

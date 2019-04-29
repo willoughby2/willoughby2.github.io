@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title></title>
+
+		<!--put your external stylesheet links here-->
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="lib/leaflet.css">
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+		<!--[if IE<9]>
+			<link rel="stylesheet" href="css/style.ie.css">
+		<![endif]-->
+        <center><header>Craft Beer Industry 2011-2016</header></center>
+	</head>
+
+	<body>
+        
+        <div id="mapid"></div>
+        <div id="legend">
+            <div class='legend-title'><center>Number of Breweries per State</center></div>
+            <div class='top'><center><img id="breweries" height=64px src="lib/images/proplegend-01.png"></center></div>
+            <div class='legend-title'><center>All the Top Breweries in the USA from 2011 to 2013</center></div>
+            <div class="top"><center><img id="top" height=50px width= 50px src="lib/images/Beer-icon3.png"></center></div>
+            <div class='legend-title'><center>Beer Consumption per Capita</center></div>
+            <div class='legend-scale'>
+                <ul class="legend">
+                    <li><span class="a"></span> .6 - .93 </li>
+                    <li><span class="b"></span> .93 - 1.15 </li>
+                    <li><span class="c"></span> 1.15 - 1.3 </li>
+                    <li><span class="d"></span> 1.3 - 1.5 </li>
+                    <li><span class="f"></span> 1.5 - 1.9 </li>
+                </ul>
+            </div>
+            <div class='legend-source'>Source: <a href="https://pubs.niaaa.nih.gov/publications/surveillance110/CONS16.htm">Surveillance Report by the National Institute on Alcohol Abuse and Alcoholism</a></div>
+        </div>
+        <div id="panel"></div>
+        <div id="chart" align="center"></div>
+ 
+                  
+
+        <script type="text/javascript" src="lib/d3-queue.min.js"></script>
+        <script type="text/javascript" src="lib/d3-queue.js"></script>
+        <script type="text/javascript" src="lib/simple-statistics.min.js"></script>
+        <script type="text/javascript" src="lib/simple-statistics.js"></script>
+        
+        <script type="text/javascript" src="lib/d3.js"></script>
+        
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+        <script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+        <script type="text/javascript" src="lib/leaflet-src.js"></script>
+
+        <script type="text/javascript" src="js/main.js"></script>
+
+	</body>
+</html>

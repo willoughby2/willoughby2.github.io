@@ -1,0 +1,113 @@
+/* Stylesheet by Amy Willoughby, 2018 */
+header {
+    font-family: serif;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+#mapid {
+    height: 450px;
+    width: 80%;
+    display: inline-block;
+    float: left;
+}
+
+#panel{
+    z-index: 2000;
+    height: auto;
+    width: 270px;
+    background-color: black;
+    opacity: .4;
+    border-radius: 2px;
+    position: relative;
+    padding: 3px;
+    bottom: 40px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+#chart{
+    background-color: rgba(128,128,128,.2);
+    border: medium solid #999;
+}
+
+#legend{
+    height: 450px;
+    width: 15%;
+    display: inline-block;
+    float: left;
+    margin-left: 20px;
+}
+
+.range-slider {
+    width: 150px;
+}
+
+
+#forward {
+    float: right;
+    display: inline-block;
+    width: 20%;
+}
+
+
+#reverse {
+    float: left;
+    display: inline-block;
+    width: 20%
+}
+
+.legend { list-style: none}
+
+.legend span { 
+    border: 1px solid black; 
+    float: left; 
+    width: 25px; 
+    height: 12px; 
+    margin: 2px; 
+}
+
+.legend .a { 
+    background-color: #ffffd4; 
+    opacity: .7;
+}
+
+.legend .b { 
+    background-color: #fee391; 
+    opacity: .7; 
+}
+
+.legend .c { 
+    background-color: #fec44f; 
+    opacity: .7; 
+}
+
+.legend .d { 
+    background-color: #fe9929; 
+    opacity: .7; 
+}
+
+.legend .e { 
+    background-color: #d95f0e; 
+    opacity: .7; 
+}
+
+.legend .f { 
+    background-color: #993404; 
+    opacity: .7 
+}
+
+.legend-source {
+    font-size: 10px;
+}
+
+.legend-title {
+    font-size: 14px;
+}
+
+.top{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}

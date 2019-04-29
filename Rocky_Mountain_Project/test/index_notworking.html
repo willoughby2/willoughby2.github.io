@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        
+        <title>Rocky Mountain National Park</title>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+		<!--put your external stylesheet links here-->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="lib/leaflet.css">
+        <link rel="stylesheet" href="lib/leaflet-sidebar.css">
+        <link rel="stylesheet" href="lib/leaflet-sidebar.min.css">
+        <script src="https://libs.cartocdn.com/carto.js/v4.1.5/carto.min.js"></script>
+        <link href="https://carto.com/developers/carto-js/examples/maps/public/style.css" rel="stylesheet">
+        
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+        
+		<!--[if IE<9]>
+			<link rel="stylesheet" href="css/style.ie.css">
+		<![endif]-->
+
+	</head>
+
+	<body>
+        
+      <div id="sidebar" class="sidebar collapsed">
+        <!-- Nav tabs -->
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#home" role="tab"><i class="fa fa-map"></i></a></li>
+                <li><a href="#profile" role="tab"><i class="fa fa-user"></i></a></li>
+            </ul>
+
+        </div>
+
+        <!-- Tab panes -->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="home">
+                <h1 class="sidebar-header">
+                    Rocky Mountain National Park
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+
+                <p>Map Layer List</p>
+                
+                <div id="controls">
+                    <ul>
+                        <li>
+                            <input type="checkbox" class="checkboxes" id="polygon" onClick="toggleLayer(romoPolygonLayer,'polygon')" checked/>
+                            <label>Park Boundary</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="checkboxes" id="summits" onClick="toggleLayer(romoSummitsLayer,'summits')" checked/>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/White_Arrow_Up.svg/1024px-White_Arrow_Up.svg.png" width=12 height=12 style="margin: 0px 5px"><label>Summits</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="checkboxes" id="trails" onClick="toggleLayer(romoTrailsLayer,'trails')" checked/>
+                            <img src="data/line.PNG" width=15 height=15 style="margin:0px 5px"><label>Trails</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="checkboxes" id="centers" onClick="toggleLayer(romoCentersLayer,'centers')" checked/>
+                            <img src="https://img.clipartxtras.com/a081f306355222c96014d74fe920dbdb_orange-house-clipart-clipartsgramcom-orange-house-clipart_600-600.png" padx=5px width=15 height=15 style="margin:0px 5px"> <label>Visitor Centers</label>
+                        </li>
+                    </ul>
+                    
+                    <p>Base Map Options</p>
+                    <ul>
+                        <li>
+                            <input type="radio" class="radio" name="rBase" id="outdoors" onclick="toggleBase()" checked/>           <label>Terrain</label>
+                        </li>
+                        <li>
+                            <input type="radio" class="radio" name="rBase" id="cartoon" onclick="toggleBase()"> <label>Cartoon</label>
+                        </li>
+                    </ul>
+                    
+                </div>
+                
+
+                <p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                
+                    
+            </div>
+
+            <div class="sidebar-pane" id="profile">
+                <h1 class="sidebar-header">Profile<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+            
+                <div class="form" style="border-radius: 5px; padding: 15px; display: block">
+                    <form action="action_page.php">
+                    
+                    <label for="fname" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">Your Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your name..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">
+
+                    <label for="title" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">Point of Interest:</label>
+                    <input type="text" id="title" name="title" placeholder="POI Title" style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">
+
+                    <label for="description" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">Description:</label>
+                    <textarea id="description" name="description" placeholder="Describe your point of interest..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical; height:170px"></textarea>
+                        
+                    <label for="lat" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">GPS Lat:</label>
+                    <input type="text" id="lat" name="lat" placeholder="Latitude..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">
+
+                    <label for="long" style="width: 100%; padding: 10px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">GPS Long:</label>
+                    <input type="text" id="title" name="title" placeholder="Longitude..." style="width: 100%; padding: 10px; border: 1px solid #ccc;  border-radius: 4px; box-sizing: border-box; margin-top: 3px; margin-bottom: 10px;  resize: vertical">
+
+                    <input type="submit" value="Submit" style="background-color: #4CAF50; color: white; padding: 12px 20px; border: none; border-radius: 4px;">
+
+                    </form>
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+        
+        <div id="map" class="sidebar-map"></div>
+        
+
+                  
+
+
+        <script src="https://use.fontawesome.com/4087913cd5.js"></script>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+        <script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+        <script type="text/javascript" src="lib/leaflet-src.js"></script>
+        <script type="text/javascript" src="lib/leaflet-sidebar.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+
+	</body>
+</html>
