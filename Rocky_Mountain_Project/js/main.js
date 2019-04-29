@@ -49,7 +49,7 @@
     var romoPicnicLayer = new carto.layer.Layer(romoPicnicSource, romoPicnicStyle, {featureClickColumns: ['poiname']});
 
     var romoWaterfallSource = new carto.source.Dataset("romo_falls");
-    var romoWaterfallStyle = new carto.style.CartoCSS('#layer {marker-width: 11; marker-fill: #0000FF; marker-line-color: #FFFFFF; marker-file: url("https://willoughby2.github.io/Rocky_Mountain_Project/Light-Blue-Triangle-150x138.png")}')
+    var romoWaterfallStyle = new carto.style.CartoCSS('#layer {marker-width: 11; marker-fill: #0000FF; marker-line-color: #FFFFFF; marker-file: url("https://willoughby2.github.io/Rocky_Mountain_Project/lib/images/Light-Blue-Triangle-150x138.png")}')
     var romoWaterfallLayer = new carto.layer.Layer(romoWaterfallSource, romoWaterfallStyle, {featureClickColumns: ['fall_name']});
 
     client.addLayers([romoPolygonLayer, romoTrailsLayer, romoCentersLayer, romoWaterfallLayer, romoPicnicLayer, romoSummitsLayer]);
