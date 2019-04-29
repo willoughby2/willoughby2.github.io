@@ -26,10 +26,6 @@ body {
   align-content: center;
 }
 
-content {
-    height: 100%;
-}
-
 h5 {
     font-family: ‘Bookman Old Style’, Georgia, Garamond, ‘Times New Roman’, Times, serif;
     border-bottom: 2px solid darkseagreen;
