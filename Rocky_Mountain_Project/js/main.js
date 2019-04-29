@@ -20,7 +20,8 @@
 
     var client = new carto.Client({
         apiKey: '0PKZhjNAs2diwwzAadUkhQ',
-        username: 'willoughby2'
+        username: 'willoughby2',
+        serverUrl: 'http(s)://your.carto.instance/user/willoughby2'
     });
 
     var romoCentersSource = new carto.source.SQL('SELECT * FROM romo_visitorcenters');
