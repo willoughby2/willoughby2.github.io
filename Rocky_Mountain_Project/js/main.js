@@ -28,7 +28,7 @@
     var romoCentersLayer = new carto.layer.Layer(romoCentersSource, romoCentersStyle, {featureClickColumns: ['centername', 'notes']});
 
     var romoSummitsSource = new carto.source.SQL('SELECT * from romo_summits');
-    var romoSummitsStyle = new carto.style.CartoCSS('#layer { marker-width: 10; marker-fill: #EE4D5A; marker-fill-opacity: 1; marker-allow-overlap: true; marker-line-width: 1; marker-line-color: #FFFFFF; marker-line-opacity: 1; marker-file: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/White_Arrow_Up.svg/1024px-White_Arrow_Up.svg.png");}');
+    var romoSummitsStyle = new carto.style.CartoCSS('#layer { marker-width: 10; marker-fill: #EE4D5A; marker-fill-opacity: 1; marker-allow-overlap: true; marker-line-width: 1; marker-line-color: #FFFFFF; marker-line-opacity: 1; marker-file: url("https://willoughby2.github.io/Rocky_Mountain_Project/lib/images/White_Arrow_Up.svg.png");}');
     var romoSummitsLayer = new carto.layer.Layer(romoSummitsSource, romoSummitsStyle, {featureClickColumns: ['feature_na']});
 
     var romoTrailsSource = new carto.source.SQL('SELECT * from romo_trails');
@@ -40,16 +40,16 @@
     var romoPolygonLayer = new carto.layer.Layer(romoPolygonSource, romoPolygonStyle);
 
     var romoPoiSource = new carto.source.SQL("SELECT * FROM poi_userinput WHERE enable='yes'");
-    var romoPoiStyle = new carto.style.CartoCSS('#layer {marker-width: 15; marker-fill: #EE4D5A; marker-line-color: #FFFFFF; marker-file: url("https://joesbutchershop.com/wp-content/uploads/2016/07/cameraicon.png")}')
+    var romoPoiStyle = new carto.style.CartoCSS('#layer {marker-width: 15; marker-fill: #EE4D5A; marker-line-color: #FFFFFF; marker-file: url("https://willoughby2.github.io/Rocky_Mountain_Project/lib/images/cameraicon.png")}')
     var romoPoiLayer = new carto.layer.Layer(romoPoiSource, romoPoiStyle, {featureClickColumns: ['title', 'description', 'name']});
 
 
     var romoPicnicSource = new carto.source.Dataset("romo_picnicareas");
-    var romoPicnicStyle = new carto.style.CartoCSS('#layer {marker-width: 16; marker-fill: #008000; marker-line-color: #FFFFFF; marker-file: url("https://s21124.pcdn.co/wp-content/uploads/2017/05/parks-Icon.png")}')
+    var romoPicnicStyle = new carto.style.CartoCSS('#layer {marker-width: 16; marker-fill: #008000; marker-line-color: #FFFFFF; marker-file: url("https://willoughby2.github.io/Rocky_Mountain_Project/lib/images/parks-Icon.png")}')
     var romoPicnicLayer = new carto.layer.Layer(romoPicnicSource, romoPicnicStyle, {featureClickColumns: ['poiname']});
 
     var romoWaterfallSource = new carto.source.Dataset("romo_falls");
-    var romoWaterfallStyle = new carto.style.CartoCSS('#layer {marker-width: 11; marker-fill: #0000FF; marker-line-color: #FFFFFF; marker-file: url("http://panda.mobilepaks.com/wp-content/uploads/2013/12/Light-Blue-Triangle-150x138.png")}')
+    var romoWaterfallStyle = new carto.style.CartoCSS('#layer {marker-width: 11; marker-fill: #0000FF; marker-line-color: #FFFFFF; marker-file: url("https://willoughby2.github.io/Rocky_Mountain_Project/Light-Blue-Triangle-150x138.png")}')
     var romoWaterfallLayer = new carto.layer.Layer(romoWaterfallSource, romoWaterfallStyle, {featureClickColumns: ['fall_name']});
 
     client.addLayers([romoPolygonLayer, romoTrailsLayer, romoCentersLayer, romoWaterfallLayer, romoPicnicLayer, romoSummitsLayer]);
