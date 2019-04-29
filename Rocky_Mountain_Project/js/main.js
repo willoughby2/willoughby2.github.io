@@ -24,7 +24,7 @@
     });
 
     var romoCentersSource = new carto.source.SQL('SELECT * FROM romo_visitorcenters');
-    var romoCentersStyle = new carto.style.CartoCSS('#layer {marker-width:16; marker-fill: #EE4D5A; marker-line-color: #FFFFFF}'; marker-file: url("https://willoughby2.github.io/Rocky_Mountain_Project/lib/images/orange_house.png");
+    var romoCentersStyle = new carto.style.CartoCSS('#layer {marker-width:16; marker-fill: #EE4D5A; marker-line-color: #FFFFFF; marker-file: url("https://willoughby2.github.io/Rocky_Mountain_Project/lib/images/orange_house.png")}');
     var romoCentersLayer = new carto.layer.Layer(romoCentersSource, romoCentersStyle, {featureClickColumns: ['centername', 'notes']});
 
     var romoSummitsSource = new carto.source.SQL('SELECT * from romo_summits');
