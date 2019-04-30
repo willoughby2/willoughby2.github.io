@@ -72,41 +72,6 @@ p4 {
     font-size: 14px;
 }
 
-.profile-img-container {
-    position: relative;
-    display: inline-block; /* added */
-    overflow: hidden; /* added */
-}
-
-.profile-img-container img {width:100%;} /* remove if using in grid system */
-
-.profile-img-container:hover a {
-    opacity: 1; /* added */
-    top: 0; /* added */
-    z-index: 500;
-    background: rgba(255, 255, 255, .5);
-}
-/* added */
-.profile-img-container:hover a i {
-    top: 50%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-}
-/* added */
-.profile-img-container a {
-    display: block;
-    position: absolute;
-    top: -100%;
-    opacity: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    text-align: center;
-    color: inherit;
-}
-
 img {
     width: 30%;
     object-fit:contain;
