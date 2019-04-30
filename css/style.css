@@ -78,6 +78,8 @@ p4 {
     overflow: hidden; /* added */
 }
 
+.profile-img-container img {width:100%;} /* remove if using in grid system */
+
 .profile-img-container:hover a {
     opacity: 1; /* added */
     top: 0; /* added */
