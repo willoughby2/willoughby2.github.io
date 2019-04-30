@@ -88,7 +88,7 @@ p4 {
 }
 /* added */
 .profile-img-container:hover a i {
-    top: 50%;
+    top: 100%;
     position: absolute;
     left: 0;
     right: 0;
