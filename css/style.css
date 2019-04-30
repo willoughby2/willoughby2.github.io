@@ -68,6 +68,10 @@ p2 {
     font-size: 16px;
 }
 
+p4 {
+    font-size: 14px;
+}
+
 img {
     width: 30%;
     object-fit:contain;
