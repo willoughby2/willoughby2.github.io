@@ -77,10 +77,6 @@ p4 {
     display: table;
     z-index: 2;
     opacity: 0;
-    left: 10;
-    top: 10;
-    width:100%;
-    height:100%;
     vertical-align: middle;
     text-align: center;
     margin: auto;
