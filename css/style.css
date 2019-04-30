@@ -68,8 +68,14 @@ p2 {
     font-size: 16px;
 }
 
+p3 {
+    font-family: ‘Bookman Old Style’, Georgia, Garamond, ‘Times New Roman’, Times, serif;
+    color: darkolivegreen;
+    font-size: 16px;
+}
+
 p4 {
-    font-size: 14px;
+    font-size: 12px;
     font-family: Verdana, Geneva, sans-serif;
     color: darkolivegreen;
 }
