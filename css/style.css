@@ -72,28 +72,37 @@ p4 {
     font-size: 14px;
 }
 
-.cn {
+.profile-img-container {
+    position: relative;
+    display: inline-block; /* added */
+    overflow: hidden; /* added */
+}
+
+.profile-img-container:hover a {
+    opacity: 1; /* added */
+    top: 0; /* added */
+    z-index: 500;
+    background: rgba(255, 255, 255, .5);
+}
+/* added */
+.profile-img-container:hover a i {
+    top: 50%;
     position: absolute;
-    display: table;
-    z-index: 2;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+/* added */
+.profile-img-container a {
+    display: block;
+    position: absolute;
+    top: -100%;
     opacity: 0;
-    vertical-align: middle;
+    left: 0;
+    bottom: 0;
+    right: 0;
     text-align: center;
-    margin: auto;
-}
-
-.cn:hover { 
-    opacity:1;
-    background:rgba(0,0,0,0.5) center no-repeat;
-}
-
-div.inner {
-    xdisplay: block;
-    width: 280px;
-    height: 80px;
-    display:table-cell;
-    vertical-align:middle;
-    
+    color: inherit;
 }
 
 img {
